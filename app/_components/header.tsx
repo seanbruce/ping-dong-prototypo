@@ -1,6 +1,6 @@
 "use client";
 
-import { forwardRef } from "react";
+import { forwardRef, useState, useRef, useEffect } from "react";
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -9,6 +9,8 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
   NavigationMenuIndicator,
+  NavigationMenuViewport,
+  navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
 import { cn } from "@/lib/utils";
 
@@ -230,13 +232,48 @@ const navMenus = [
 ];
 
 export default function Header() {
+  const [offset, setOffset] = useState<number | null>(null);
+  const listRef = useRef<HTMLUListElement | null>(null);
+  const [value, setValue] = useState("");
+  const [activeTrigger, setActiveTrigger] = useState<HTMLButtonElement | null>(
+    null
+  );
+
+  useEffect(() => {
+    const list = listRef.current;
+    if (activeTrigger && list) {
+      const listWidth = list.offsetWidth;
+      const listCenter = listWidth / 2;
+
+      const triggerOffsetRight =
+        listWidth -
+        activeTrigger.offsetLeft -
+        activeTrigger.offsetWidth +
+        activeTrigger.offsetWidth / 2;
+
+      setOffset(Math.round(listCenter - triggerOffsetRight));
+    } else if (value === "") {
+      setOffset(null);
+    }
+  }, [activeTrigger, value]);
+
+  const CustomItemClasses =
+    "rounded-none bg-emerald-500 hover:bg-emerald-600 focus:bg-emerald-600 focus:text-white data-[state=open]:bg-emerald-600 hover:text-white text-white";
+
   return (
     <>
       <header className="h-[100px] bg-white"></header>
       <div className="min-h-[40px] bg-emerald-500 ">
         <div className="container mx-auto">
-          <NavigationMenu className="w-full max-w-full [&>*]:w-full">
-            <NavigationMenuList className="flex flex-nowrap w-full">
+          <NavigationMenu
+            className="flex justify-center relative"
+            value={value}
+            onValueChange={setValue}
+          >
+            <NavigationMenuList
+              className="flex flex-nowrap list-none "
+              ref={listRef}
+            >
               {navMenus.map(({ id, title, children }) => (
                 <NavigationMenuItem
                   key={id}
@@ -244,17 +281,31 @@ export default function Header() {
                   className="flex-auto"
                 >
                   {children && children.length > 0 ? (
-                    <NavigationMenuTrigger className="rounded-none bg-emerald-500 hover:bg-emerald-600 focus:bg-emerald-600 data-[state=open]:bg-emerald-600 hover:text-white text-white">
+                    <NavigationMenuTrigger
+                      className={CustomItemClasses}
+                      ref={(node) => {
+                        if (String(id) === value && activeTrigger !== node) {
+                          setActiveTrigger(node);
+                        }
+                        return node;
+                      }}
+                    >
                       {title}
                     </NavigationMenuTrigger>
                   ) : (
-                    <NavigationMenuLink className="whitespace-nowrap bg-emerald-500 hover:bg-emerald-600 focus:bg-emerald-600 text-white">
+                    <NavigationMenuLink
+                      className={cn(
+                        navigationMenuTriggerStyle(),
+                        CustomItemClasses
+                      )}
+                    >
                       {title}
                     </NavigationMenuLink>
                   )}
+
                   {children && children.length > 0 ? (
                     <NavigationMenuContent>
-                      <ul className="flex flex-col p-4 w-full">
+                      <ul className="flex flex-col p-4">
                         {children?.map(({ id, title }) => (
                           <ListItem key={id} title={title}>
                             {title}
@@ -267,6 +318,28 @@ export default function Header() {
               ))}
               <NavigationMenuIndicator />
             </NavigationMenuList>
+            <div
+              style={{
+                position: "absolute",
+                left: 0,
+                top: "100%",
+                width: "100%",
+                backgroundColor: "whitesmoke",
+                display: "flex",
+                justifyContent: "center",
+              }}
+            >
+              <NavigationMenuViewport
+                style={{
+                  // Avoid transitioning from initial position when first opening
+                  display: !offset ? "none" : undefined,
+                  transform: `translateX(${offset}px)`,
+                  top: "100%",
+                  width: "var(--radix-navigation-menu-viewport-width)",
+                  transition: "all 0.5s ease",
+                }}
+              />
+            </div>
           </NavigationMenu>
         </div>
       </div>
