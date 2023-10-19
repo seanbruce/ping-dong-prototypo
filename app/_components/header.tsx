@@ -8,7 +8,6 @@ import {
   NavigationMenuLink,
   NavigationMenuList,
   NavigationMenuTrigger,
-  NavigationMenuIndicator,
   NavigationMenuViewport,
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
@@ -234,7 +233,7 @@ const navMenus = [
 export default function Header() {
   const [offset, setOffset] = useState<number | null>(null);
   const listRef = useRef<HTMLUListElement | null>(null);
-  const [value, setValue] = useState("");
+  const [value, setValue] = useState("0");
   const [activeTrigger, setActiveTrigger] = useState<HTMLButtonElement | null>(
     null
   );
@@ -305,9 +304,13 @@ export default function Header() {
 
                   {children && children.length > 0 ? (
                     <NavigationMenuContent>
-                      <ul className="flex flex-col p-4">
+                      <ul className="flex flex-col">
                         {children?.map(({ id, title }) => (
-                          <ListItem key={id} title={title}>
+                          <ListItem
+                            key={id}
+                            title={title}
+                            className={cn(CustomItemClasses)}
+                          >
                             {title}
                           </ListItem>
                         ))}
@@ -316,28 +319,19 @@ export default function Header() {
                   ) : null}
                 </NavigationMenuItem>
               ))}
-              <NavigationMenuIndicator />
             </NavigationMenuList>
-            <div
-              style={{
-                position: "absolute",
-                left: 0,
-                top: "100%",
-                width: "100%",
-                backgroundColor: "whitesmoke",
-                display: "flex",
-                justifyContent: "center",
-              }}
-            >
+            <div className="absolute left-0 top-full w-full flex justify-center">
               <NavigationMenuViewport
                 style={{
                   // Avoid transitioning from initial position when first opening
                   display: !offset ? "none" : undefined,
                   transform: `translateX(${offset}px)`,
                   top: "100%",
-                  width: "var(--radix-navigation-menu-viewport-width)",
+                  width: `var(--radix-navigation-menu-viewport-width)`,
+                  minWidth: activeTrigger?.offsetWidth,
                   transition: "all 0.5s ease",
                 }}
+                className="bg-emerald-500 mt-0 rounded-t-none [&>*]:min-w-full border-0 border-t-2 border-amber-300"
               />
             </div>
           </NavigationMenu>
