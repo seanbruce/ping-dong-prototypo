@@ -1,6 +1,6 @@
 "use client";
 
-import { forwardRef, useState, useRef, useEffect } from "react";
+import { forwardRef, useState, useRef, useEffect, useCallback } from "react";
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -12,6 +12,19 @@ import {
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
 import { cn } from "@/lib/utils";
+import { MenuIcon, Facebook, ChevronRight } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { useMedia } from "react-use";
+import { usePreventScroll } from "react-aria";
+import Link from "next/link";
+import { BsLine } from "react-icons/bs";
+import { ScrollArea } from "@/components/ui/scroll-area";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 
 const navMenus = [
   {
@@ -237,6 +250,24 @@ export default function Header() {
   const [activeTrigger, setActiveTrigger] = useState<HTMLButtonElement | null>(
     null
   );
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [expandedMenu, setExpandedMenu] = useState<string[]>([]);
+  const scrollAreaRef = useRef<HTMLDivElement>(null);
+
+  usePreventScroll({ isDisabled: !menuOpen });
+  const isWide = useMedia("(min-width: 1262px)", false);
+
+  useEffect(() => {
+    setMenuOpen(false);
+  }, [isWide]);
+
+  const scrollMenuToTop = useCallback(() => {
+    console.log(
+      scrollAreaRef.current
+        ?.querySelector(`[data-radix-scroll-area-viewport]`)
+        ?.scrollTo(0, 0)
+    );
+  }, []);
 
   useEffect(() => {
     const list = listRef.current;
@@ -261,8 +292,10 @@ export default function Header() {
 
   return (
     <>
-      <header className="h-[100px] bg-white"></header>
-      <div className="min-h-[40px] bg-emerald-500 ">
+      <header className="h-[60px] bg-emerald-500 flex items-center px-4 min-[1262px]:hidden fixed top-0 inset-x-0 w-full z-30"></header>
+      <div className="h-[60px] min-[1262px]:hidden" />
+      <header className="h-[100px] bg-white hidden min-[1262px]:block"></header>
+      <div className="min-h-[40px] bg-emerald-500 hidden min-[1262px]:block">
         <div className="container mx-auto">
           <NavigationMenu
             className="flex justify-center relative"
@@ -337,6 +370,103 @@ export default function Header() {
           </NavigationMenu>
         </div>
       </div>
+      <div
+        className={cn(
+          "h-[100dvh] bg-emerald-500 fixed inset-0 z-40 min-[1262px]:hidden min-[1262px]:pointer-events-none transition-all duration-500 origin-top-left transform-gpu",
+          menuOpen ? "opacity-100" : "opacity-0",
+          menuOpen ? "pointer-events-auto" : "pointer-events-none",
+          menuOpen ? "skew-x-0" : " -skew-x-6",
+          menuOpen ? "translate-x-0" : "-translate-x-10"
+        )}
+      >
+        <ScrollArea
+          className="h-full absolute inset-0"
+          type="scroll"
+          ref={scrollAreaRef}
+        >
+          <div className="bg-emerald-700 px-5 pt-14 pb-0">
+            <Button className="mx-auto block mb-4 font-bold" variant="outline">
+              登入
+            </Button>
+            <div className="flex items-center">
+              <Link
+                href="/"
+                className="py-3 flex-auto text-center text-white font-bold"
+              >
+                首頁
+              </Link>
+              <Link
+                href="/"
+                className="py-3 flex-auto text-center text-white font-bold"
+              >
+                聯絡我們
+              </Link>
+              <Link
+                href="/"
+                className="py-3 flex-auto text-center text-white font-bold inline-flex justify-center"
+              >
+                <Facebook className="w-5 h-5" />
+              </Link>
+              <Link
+                href="/"
+                className="py-3 flex-auto text-center text-white font-bold inline-flex justify-center"
+              >
+                <BsLine className="w-5 h-5" />
+              </Link>
+            </div>
+          </div>
+          <div className="px-5">
+            <Accordion
+              type="multiple"
+              className="w-full"
+              value={expandedMenu}
+              onValueChange={(value) => setExpandedMenu(value)}
+            >
+              {navMenus.map(({ id, title, children }) => (
+                <AccordionItem value={String(id)} key={id}>
+                  {children ? (
+                    <>
+                      <AccordionTrigger className="hover:no-underline text-white">
+                        {title}
+                      </AccordionTrigger>
+                      <AccordionContent className="bg-emerald-600 text-white">
+                        {children.map(({ id, title }) => (
+                          <p
+                            key={id}
+                            className="flex flex-1 items-center justify-between py-4 pl-5 font-medium transition-all"
+                          >
+                            {title}
+                          </p>
+                        ))}
+                      </AccordionContent>
+                    </>
+                  ) : (
+                    <div className="flex flex-1 items-center justify-between py-4 font-medium transition-all text-white">
+                      {title}
+                      <ChevronRight className="text-white w-4 h-4" />
+                    </div>
+                  )}
+                </AccordionItem>
+              ))}
+            </Accordion>
+          </div>
+        </ScrollArea>
+      </div>
+      <Button
+        variant="ghost"
+        onClick={() =>
+          setMenuOpen((prev) => {
+            if (!prev) {
+              scrollMenuToTop();
+              setExpandedMenu([]);
+            }
+            return !prev;
+          })
+        }
+        className="fixed left-3 top-2.5 z-50 block min-[1262px]:hidden bg-emerald-500 hover:bg-emerald-600 p-2 rounded-full"
+      >
+        <MenuIcon className="text-white" />
+      </Button>
     </>
   );
 }
