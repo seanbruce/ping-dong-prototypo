@@ -25,6 +25,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import clsx from "clsx";
 
 const navMenus = [
   {
@@ -262,11 +263,9 @@ export default function Header() {
   }, [isWide]);
 
   const scrollMenuToTop = useCallback(() => {
-    console.log(
-      scrollAreaRef.current
-        ?.querySelector(`[data-radix-scroll-area-viewport]`)
-        ?.scrollTo(0, 0)
-    );
+    scrollAreaRef.current
+      ?.querySelector(`[data-radix-scroll-area-viewport]`)
+      ?.scrollTo(0, 0);
   }, []);
 
   useEffect(() => {
@@ -441,7 +440,7 @@ export default function Header() {
                       </AccordionContent>
                     </>
                   ) : (
-                    <div className="flex flex-1 items-center justify-between py-4 font-medium transition-all text-white">
+                    <div className="flex flex-1 items-center py-4 font-medium transition-all text-white">
                       {title}
                       <ChevronRight className="text-white w-4 h-4" />
                     </div>
@@ -463,7 +462,10 @@ export default function Header() {
             return !prev;
           })
         }
-        className="fixed left-3 top-2.5 z-50 block min-[1262px]:hidden bg-emerald-500 hover:bg-emerald-600 p-2 rounded-full"
+        className={clsx(
+          "fixed left-3 top-2.5 z-50 block min-[1262px]:hidden hover:bg-emerald-600 p-2 rounded-full",
+          menuOpen ? "bg-emerald-700" : "bg-emerald-500"
+        )}
       >
         <MenuIcon className="text-white" />
       </Button>

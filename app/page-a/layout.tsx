@@ -23,7 +23,7 @@ export default async function Layout({
             </li>
           </ul>
         </div>
-        <div className="flex-auto ">{children}</div>
+        <div className="flex-auto break-all">{children}</div>
       </div>
     </div>
   );
