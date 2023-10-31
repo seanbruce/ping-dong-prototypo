@@ -11,15 +11,14 @@ export default async function Layout({
       <div className="container flex flex-col lg:flex-row">
         <div className="mb-8 lg:mb-0 lg:mr-8 flex flex-col">
           <h1 className="text-2xl font-bold mb-3 text-center lg:text-left">
-            關于工會
+            簡介
           </h1>
           <ul className="bg-emerald-500 w-full lg:w-[190px]">
             <li className="w-full flex flex-row justify-center lg:flex-col ">
-              <StyledLink href="/page-a/article-1">Article1</StyledLink>
-              <StyledLink href="/page-a/article-1">Article1</StyledLink>
-              <StyledLink href="/page-a/article-1">Article1</StyledLink>
-              <StyledLink href="/page-a/article-1">Article1</StyledLink>
-              <StyledLink href="/page-a/article-1">Article1</StyledLink>
+              <StyledLink href="/page-a/article-1">關於公會</StyledLink>
+              <StyledLink href="/page-a/article-1">公會章程</StyledLink>
+              <StyledLink href="/page-a/article-1">理事長的話</StyledLink>
+              <StyledLink href="/page-a/article-1">公會會員</StyledLink>
             </li>
           </ul>
         </div>

@@ -30,7 +30,7 @@ import clsx from "clsx";
 const navMenus = [
   {
     id: 1,
-    title: "關于工會",
+    title: "關於工會",
     children: [
       {
         id: 1,
@@ -79,16 +79,12 @@ const navMenus = [
         title: "社福團體活動公告",
       },
       {
-        id: 6,
-        title: "七院校牙醫學系學生下鄉課輔活動",
-      },
-      {
         id: 7,
         title: "新型冠狀病毒防疫專區",
       },
       {
         id: 8,
-        title: "牙醫師執業執照到期專區",
+        title: "醫師執業執照到期專區",
       },
     ],
   },
@@ -145,12 +141,8 @@ const navMenus = [
     ],
   },
   {
-    id: 5,
-    title: "口衛專案計畫",
-  },
-  {
     id: 6,
-    title: "健保專區",
+    title: "重要公文公告",
     children: [
       {
         id: 1,
@@ -182,7 +174,7 @@ const navMenus = [
   },
   {
     id: 8,
-    title: "牙醫助理專區",
+    title: "醫師專區",
     children: [
       {
         id: 1,
@@ -196,7 +188,7 @@ const navMenus = [
   },
   {
     id: 9,
-    title: "下載專區",
+    title: "表格下載",
     children: [
       {
         id: 1,
@@ -225,22 +217,8 @@ const navMenus = [
     ],
   },
   {
-    id: 10,
-    title: "線上服務",
-    children: [
-      {
-        id: 1,
-        title: "線上問卷",
-      },
-      {
-        id: 2,
-        title: "線上學習",
-      },
-    ],
-  },
-  {
     id: 11,
-    title: "北市牙醫雜誌",
+    title: "學術活動",
   },
 ];
 
