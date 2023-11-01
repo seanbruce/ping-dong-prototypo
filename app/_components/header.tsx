@@ -280,7 +280,7 @@ export default function Header() {
   const scrollAreaRef = useRef<HTMLDivElement>(null);
 
   usePreventScroll({ isDisabled: !menuOpen });
-  const isWide = useMedia("(min-width: 1262px)", false);
+  const isWide = useMedia("(min-width: 1150px)", false);
 
   useEffect(() => {
     setMenuOpen(false);
@@ -315,13 +315,13 @@ export default function Header() {
 
   return (
     <>
-      <header className="h-[60px] bg-emerald-500 flex items-center px-4 min-[1262px]:hidden fixed top-0 inset-x-0 w-full z-30"></header>
-      <div className="h-[60px] min-[1262px]:hidden" />
-      <header className="h-[100px] bg-white hidden min-[1262px]:block"></header>
-      <div className="min-h-[40px] bg-emerald-500 hidden min-[1262px]:block">
+      <header className="h-[60px] bg-emerald-500 flex items-center px-4 min-[1150px]:hidden fixed top-0 inset-x-0 w-full z-30"></header>
+      <div className="h-[60px] min-[1150px]:hidden" />
+      <header className="h-[100px] bg-white hidden min-[1150px]:block"></header>
+      <div className="min-h-[40px] bg-emerald-500 hidden min-[1150px]:block">
         <div className="container mx-auto">
           <NavigationMenu
-            className="flex justify-center relative"
+            className="flex justify-center relative mx-auto"
             value={value}
             onValueChange={setValue}
           >
@@ -398,7 +398,7 @@ export default function Header() {
       </div>
       <div
         className={cn(
-          "h-[100dvh] bg-emerald-500 fixed inset-0 z-40 min-[1262px]:hidden min-[1262px]:pointer-events-none transition-all duration-500 origin-top-left transform-gpu",
+          "h-[100dvh] bg-emerald-500 fixed inset-0 z-40 min-[1150px]:hidden min-[1150px]:pointer-events-none transition-all duration-500 origin-top-left transform-gpu",
           menuOpen ? "opacity-100" : "opacity-0",
           menuOpen ? "pointer-events-auto" : "pointer-events-none",
           menuOpen ? "skew-x-0" : " -skew-x-6",
@@ -500,7 +500,7 @@ export default function Header() {
           })
         }
         className={clsx(
-          "fixed left-3 top-2.5 z-50 block min-[1262px]:hidden hover:bg-emerald-600 p-2 rounded-full",
+          "fixed left-3 top-2.5 z-50 block min-[1150px]:hidden hover:bg-emerald-600 p-2 rounded-full",
           menuOpen ? "bg-emerald-700" : "bg-emerald-500"
         )}
       >
