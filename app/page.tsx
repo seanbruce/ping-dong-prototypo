@@ -4,22 +4,22 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import { PlusSquare } from "lucide-react";
+import Carousel from "./_components/carousel";
 
 export default function Home() {
   return (
     <div className="bg-gray-200">
       <div className="px-2 md:px-4 lg:container mx-auto py-2 md:py-4 lg:py-10 grid grid-cols-1 lg:grid-cols-3 gap-2 md:gap-4 lg:gap-8 xl:gap-10">
         <Card className="col-span-full lg:col-span-2 aspect-video lg:aspect-auto">
-          Carousel
+          <Carousel />
         </Card>
         <div className="lg:aspect-square flex flex-col gap-5">
-          <Card className="hidden lg:block bg-emerald-500 h-[100px] p-5">
-            <p className="text-white text-lg font-bold">會員登入</p>
+          <Card className="hidden lg:block bg-emerald-500 p-5">
+            <p className="text-white text-lg font-bold">全文查詢</p>
             <div className="flex gap-2">
-              <Input placeholder="賬號(身份證號)" />
-              <Input placeholder="密碼" />
+              <Input placeholder="請輸入文字" />
               <Button className="whitespace-nowrap font-bold" variant="ghost">
-                登入
+                查詢
               </Button>
             </div>
           </Card>
@@ -38,13 +38,21 @@ export default function Home() {
           </CardHeader>
           <CardContent>
             <p className="text-sm text-gray-500">
-              <span className="inline-block w-16">112.10.16</span>
+              <span className="inline-block w-20">112.10.16</span>
               <span>健保公告</span>
             </p>
             <p className="font-bold">
               112年度「即時查詢病患就醫資訊方案」2.0改版獎勵至年底，請會員院所留意時效
             </p>
             <Separator className="my-4" />
+            <p className="text-sm text-gray-500">
+              <span className="inline-block w-20">112.10.16</span>
+              <span>重要公告</span>
+            </p>
+            <p className="font-bold">
+              【活動取消】
+              09/03(星期日)大將日本料理餐廳「基層氣喘糖尿病照護策略學術研討會」活動取消
+            </p>
           </CardContent>
         </Card>
         <Card className=" h-[475px]">
@@ -60,10 +68,15 @@ export default function Home() {
             <p className="text-sm text-gray-500">
               <span className="inline-block">112.04.16 - 112.12.24</span>
             </p>
-            <p className="font-bold">
-              第23期牙醫助理進階班--基本救命術（BLS）訓練課程Ⅱ-112/12/17
-            </p>
+            <p className="font-bold">1121022 會員秋季雲嘉一日遊行前通知</p>
             <Separator className="my-4" />
+            <p className="text-sm text-gray-500">
+              <span className="inline-block">112.04.16 - 112.12.24</span>
+            </p>
+            <p className="font-bold">
+              【活動取消】
+              09/03(星期日)大將日本料理餐廳「基層氣喘糖尿病照護策略學術研討會」活動取消
+            </p>
           </CardContent>
         </Card>
         <Card className=" h-[475px]">
@@ -80,7 +93,7 @@ export default function Home() {
               <span className="inline-block">112.09.24 - 112.12.23</span>
             </p>
             <p className="font-bold">
-              台北市政府民政局「一起來吃飯吧～料理聯誼」
+              【重要！！！ 更改為午宴】112年10月29日 醫師節慶祝大會通知
             </p>
             <Separator className="my-4" />
           </CardContent>

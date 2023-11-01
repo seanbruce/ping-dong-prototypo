@@ -30,27 +30,32 @@ import clsx from "clsx";
 const navMenus = [
   {
     id: 1,
-    title: "關于工會",
+    title: "關於工會",
     children: [
       {
         id: 1,
         title: "本會簡介",
+        url: "/about-association/about-us",
       },
       {
         id: 2,
         title: "理事長的話",
+        url: "/about-association/chairperson-remark",
       },
       {
         id: 3,
         title: "歷屆理事長",
+        url: "/about-association/former-chairpersons",
       },
       {
         id: 4,
         title: "理監事組織表",
+        url: "/about-association/board-of-directors",
       },
       {
         id: 5,
         title: "各委員會施政理念",
+        url: "/about-association/the-governing-philosophies-of-each-committee",
       },
     ],
   },
@@ -61,34 +66,42 @@ const navMenus = [
       {
         id: 1,
         title: "會務公告",
+        url: "/news-and-notices?type=1",
       },
       {
         id: 2,
         title: "醫事公告",
+        url: "/news-and-notices?type=2",
       },
       {
         id: 3,
         title: "友會/校友會公告",
+        url: "/news-and-notices?type=3",
       },
       {
         id: 4,
         title: "大會專區",
+        url: "/news-and-notices?type=4",
       },
       {
         id: 5,
         title: "社福團體活動公告",
+        url: "/news-and-notices?type=5",
       },
       {
         id: 6,
         title: "七院校牙醫學系學生下鄉課輔活動",
+        url: "/news-and-notices?type=6",
       },
       {
         id: 7,
         title: "新型冠狀病毒防疫專區",
+        url: "/news-and-notices?type=7",
       },
       {
         id: 8,
-        title: "牙醫師執業執照到期專區",
+        title: "醫師執業執照到期專區",
+        url: "/news-and-notices?type=8",
       },
     ],
   },
@@ -99,22 +112,27 @@ const navMenus = [
       {
         id: 1,
         title: "行事曆",
+        url: "/",
       },
       {
         id: 2,
         title: "活動快訊",
+        url: "/",
       },
       {
         id: 3,
         title: "線上報名",
+        url: "/",
       },
       {
         id: 4,
         title: "活動花絮",
+        url: "/",
       },
       {
         id: 5,
         title: "會員專區",
+        url: "/",
       },
     ],
   },
@@ -125,44 +143,53 @@ const navMenus = [
       {
         id: 1,
         title: "基本資料",
+        url: "/",
       },
       {
         id: 2,
         title: "會員福利",
+        url: "/",
       },
       {
         id: 3,
         title: "繼續教育積分查詢",
+        url: "/",
       },
       {
         id: 4,
         title: "應繳費用查詢",
+        url: "/",
       },
       {
         id: 5,
         title: "繳費紀錄查詢",
+        url: "/",
       },
     ],
   },
   {
     id: 5,
     title: "口衛專案計畫",
+    url: "/",
   },
   {
     id: 6,
-    title: "健保專區",
+    title: "重要公文公告",
     children: [
       {
         id: 1,
         title: "輔導追蹤作業流程",
+        url: "/",
       },
       {
         id: 2,
         title: "健保相關資料查詢",
+        url: "/",
       },
       {
         id: 3,
         title: "保險公告",
+        url: "/",
       },
     ],
   },
@@ -173,10 +200,12 @@ const navMenus = [
       {
         id: 1,
         title: "法規公告",
+        url: "/",
       },
       {
         id: 2,
         title: "待審法規",
+        url: "/",
       },
     ],
   },
@@ -187,60 +216,55 @@ const navMenus = [
       {
         id: 1,
         title: "相關辦法",
+        url: "/",
       },
       {
         id: 2,
         title: "活動訊息",
+        url: "/",
       },
     ],
   },
   {
     id: 9,
-    title: "下載專區",
+    title: "表格下載",
     children: [
       {
         id: 1,
         title: "公會會籍申辦資料",
+        url: "/",
       },
       {
         id: 2,
         title: "衛生局執業申辦資料",
+        url: "/",
       },
       {
         id: 3,
         title: "申請健保特約流程",
+        url: "/",
       },
       {
         id: 4,
         title: "會費信用卡授權書",
+        url: "/",
       },
       {
         id: 5,
         title: "其他資料下載",
+        url: "/",
       },
       {
         id: 6,
         title: "手術同意書表下載",
+        url: "/",
       },
     ],
   },
   {
     id: 10,
-    title: "線上服務",
-    children: [
-      {
-        id: 1,
-        title: "線上問卷",
-      },
-      {
-        id: 2,
-        title: "線上學習",
-      },
-    ],
-  },
-  {
-    id: 11,
-    title: "北市牙醫雜誌",
+    title: "學術活動",
+    url: "/",
   },
 ];
 
@@ -305,7 +329,7 @@ export default function Header() {
               className="flex flex-nowrap list-none "
               ref={listRef}
             >
-              {navMenus.map(({ id, title, children }) => (
+              {navMenus.map(({ id, title, url, children }) => (
                 <NavigationMenuItem
                   key={id}
                   value={String(id)}
@@ -324,24 +348,27 @@ export default function Header() {
                       {title}
                     </NavigationMenuTrigger>
                   ) : (
-                    <NavigationMenuLink
-                      className={cn(
-                        navigationMenuTriggerStyle(),
-                        CustomItemClasses
-                      )}
-                    >
-                      {title}
-                    </NavigationMenuLink>
+                    <Link href={url ?? ""} legacyBehavior passHref>
+                      <NavigationMenuLink
+                        className={cn(
+                          navigationMenuTriggerStyle(),
+                          CustomItemClasses
+                        )}
+                      >
+                        {title}
+                      </NavigationMenuLink>
+                    </Link>
                   )}
 
                   {children && children.length > 0 ? (
                     <NavigationMenuContent>
-                      <ul className="flex flex-col">
-                        {children?.map(({ id, title }) => (
+                      <ul className="flex flex-col w-min">
+                        {children?.map(({ id, title, url }) => (
                           <ListItem
                             key={id}
                             title={title}
                             className={cn(CustomItemClasses)}
+                            href={url}
                           >
                             {title}
                           </ListItem>
@@ -377,6 +404,7 @@ export default function Header() {
           menuOpen ? "skew-x-0" : " -skew-x-6",
           menuOpen ? "translate-x-0" : "-translate-x-10"
         )}
+        onClick={() => setMenuOpen(false)}
       >
         <ScrollArea
           className="h-full absolute inset-0"
@@ -421,29 +449,38 @@ export default function Header() {
               value={expandedMenu}
               onValueChange={(value) => setExpandedMenu(value)}
             >
-              {navMenus.map(({ id, title, children }) => (
+              {navMenus.map(({ id, title, url, children }) => (
                 <AccordionItem value={String(id)} key={id}>
                   {children ? (
                     <>
-                      <AccordionTrigger className="hover:no-underline text-white">
+                      <AccordionTrigger
+                        className="hover:no-underline text-white"
+                        onClick={(event) => {
+                          event.stopPropagation();
+                        }}
+                      >
                         {title}
                       </AccordionTrigger>
                       <AccordionContent className="bg-emerald-600 text-white">
-                        {children.map(({ id, title }) => (
-                          <p
+                        {children.map(({ id, title, url }) => (
+                          <Link
                             key={id}
+                            href={url}
                             className="flex flex-1 items-center justify-between py-4 pl-5 font-medium transition-all"
                           >
                             {title}
-                          </p>
+                          </Link>
                         ))}
                       </AccordionContent>
                     </>
                   ) : (
-                    <div className="flex flex-1 items-center py-4 font-medium transition-all text-white">
+                    <Link
+                      href={url}
+                      className="flex flex-1 items-center py-4 font-medium transition-all text-white"
+                    >
                       {title}
                       <ChevronRight className="text-white w-4 h-4" />
-                    </div>
+                    </Link>
                   )}
                 </AccordionItem>
               ))}
@@ -475,12 +512,12 @@ export default function Header() {
 
 const ListItem = forwardRef<
   React.ElementRef<"a">,
-  React.ComponentPropsWithoutRef<"a">
+  React.ComponentPropsWithoutRef<typeof Link>
 >(({ className, title, children, ...props }, ref) => {
   return (
     <li>
       <NavigationMenuLink asChild>
-        <a
+        <Link
           ref={ref}
           className={cn(
             "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
@@ -491,7 +528,7 @@ const ListItem = forwardRef<
           <div className="text-sm font-medium leading-none whitespace-nowrap">
             {title}
           </div>
-        </a>
+        </Link>
       </NavigationMenuLink>
     </li>
   );
