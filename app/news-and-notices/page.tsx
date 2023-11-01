@@ -137,7 +137,7 @@ export default async function Page({
                         <TableCell className="p-2 text-center">
                           {type}
                         </TableCell>
-                        <TableCell className="p-2 text-center border-l">
+                        <TableCell className="p-2 border-l font-bold">
                           {title}
                         </TableCell>
                         <TableCell className="p-2 text-center border-l">

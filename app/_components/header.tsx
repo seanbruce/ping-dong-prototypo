@@ -232,32 +232,32 @@ const navMenus = [
       {
         id: 1,
         title: "公會會籍申辦資料",
-        url: "/",
+        url: "/download-section?type=1",
       },
       {
         id: 2,
         title: "衛生局執業申辦資料",
-        url: "/",
+        url: "/download-section?type=2",
       },
       {
         id: 3,
         title: "申請健保特約流程",
-        url: "/",
+        url: "/download-section?type=3",
       },
       {
         id: 4,
         title: "會費信用卡授權書",
-        url: "/",
+        url: "/download-section?type=4",
       },
       {
         id: 5,
         title: "其他資料下載",
-        url: "/",
+        url: "/download-section?type=5",
       },
       {
         id: 6,
         title: "手術同意書表下載",
-        url: "/",
+        url: "/download-section?type=6",
       },
     ],
   },
