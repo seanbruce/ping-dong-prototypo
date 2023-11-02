@@ -52,16 +52,16 @@ export default async function Page() {
         <Table>
           <TableHeader className="border-b-2 border-emerald-600">
             <TableRow className="bg-emerald-50 hover:bg-emerald-50">
-              <TableHead className="text-emerald-600 font-bold text-center">
+              <TableHead className="text-emerald-600 font-bold text-center hidden lg:table-cell">
                 類別
               </TableHead>
-              <TableHead className="text-emerald-600 font-bold text-center">
+              <TableHead className="text-emerald-600 font-bold text-center hidden lg:table-cell">
                 標題
               </TableHead>
-              <TableHead className="text-emerald-600 font-bold text-center w-24">
+              <TableHead className="text-emerald-600 font-bold text-center w-24 hidden lg:table-cell">
                 發佈日期
               </TableHead>
-              <TableHead className="text-emerald-600 font-bold text-center w-16">
+              <TableHead className="text-emerald-600 font-bold text-center w-16 hidden lg:table-cell">
                 點擊
               </TableHead>
             </TableRow>
@@ -71,18 +71,35 @@ export default async function Page() {
               <TableRow
                 key={id}
                 className={cn(
+                  "block",
+                  "lg:table-row",
+                  "py-2",
                   index % 2 === 0 && "bg-slate-50",
                   "hover:bg-emerald-50"
                 )}
               >
-                <TableCell className="p-2 text-center">{type}</TableCell>
-                <TableCell className="p-2 border-l font-bold">
+                <TableCell
+                  className="p-1 lg:p-2 lg:text-center flex flex-nowrap lg:table-cell before:content-[attr(data-cell)_':'] before:shrink-0 before:w-[60px] before:font-bold before:mr-2 before:text-emerald-600 before:whitespace-nowrap lg:before:hidden"
+                  data-cell="類別"
+                >
+                  {type}
+                </TableCell>
+                <TableCell
+                  className="p-1 lg:p-2 lg:border-l font-bold flex flex-nowrap lg:table-cell before:content-[attr(data-cell)_':'] before:shrink-0 before:w-[60px] before:font-bold before:mr-2 before:text-emerald-600 before:whitespace-nowrap lg:before:hidden"
+                  data-cell="標題"
+                >
                   <Link href={`/news-and-notices/${id}`}>{title}</Link>
                 </TableCell>
-                <TableCell className="p-2 text-center border-l">
+                <TableCell
+                  className="p-1 lg:p-2 lg:text-center lg:border-l flex flex-nowrap lg:table-cell before:content-[attr(data-cell)_':'] before:shrink-0 before:w-[60px] before:font-bold before:mr-2 before:text-emerald-600 before:whitespace-nowrap lg:before:hidden"
+                  data-cell="發佈日期"
+                >
                   {publishDateTime}
                 </TableCell>
-                <TableCell className="p-2 text-center border-l">
+                <TableCell
+                  className="p-1 lg:p-2 lg:text-center lg:border-l flex flex-nowrap lg:table-cell before:content-[attr(data-cell)_':'] before:shrink-0 before:w-[60px] before:font-bold before:mr-2 before:text-emerald-600 before:whitespace-nowrap lg:before:hidden"
+                  data-cell="點擊"
+                >
                   {count}
                 </TableCell>
               </TableRow>

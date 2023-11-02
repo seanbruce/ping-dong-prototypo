@@ -1,4 +1,4 @@
-import SectionParagraph from "../../_components/section-paragraph";
+import SectionParagraph from "../../../_components/section-paragraph";
 
 export default async function Page(props: {
   params: {
@@ -6,7 +6,7 @@ export default async function Page(props: {
   };
 }) {
   return (
-    <div>
+    <div id="content">
       <div className="bg-emerald-50 px-2 py-3 lg:px-5 lg:py-6 flex flex-col lg:flex-row border-b border-emerald-600 mb-6">
         <div className="flex-auto order-last lg:order-first">
           <p className="text-emerald-600 font-bold mb-2 text-lg  text-center lg:text-left">
@@ -35,14 +35,14 @@ export default async function Page(props: {
       <SectionParagraph indent={false} className="mb-2">
         監事會召集人之職權如下：
       </SectionParagraph>
-      <ol className="list-decimal list-inside tracking-wide mb-4">
+      <ol className="list-decimal list-outside pl-4 tracking-wide mb-4">
         <li>召開監事會</li>
         <li>綜理監督本會會務</li>
       </ol>
       <SectionParagraph indent={false} className="mb-2">
         監事會之職權如下：
       </SectionParagraph>
-      <ol className="list-decimal list-inside tracking-wide mb-4">
+      <ol className="list-decimal list-outside pl-4 tracking-wide mb-4">
         <li>監察理事會工作之執行</li>
         <li>審核年度決算</li>
         <li>稽查、監督本會財產</li>

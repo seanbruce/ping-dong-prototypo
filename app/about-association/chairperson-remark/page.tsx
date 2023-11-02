@@ -17,11 +17,11 @@ export default async function Page() {
               <span className="text-xl text-black mx-2">温斯勇</span>醫師
             </p>
             <p className="font-bold">學歷</p>
-            <ul className="list-disc list-inside mb-2 tracking-wide">
+            <ul className="list-disc list-outside pl-4 mb-2 tracking-wide">
               <li>國立陽明大學牙醫學士</li>
             </ul>
             <p className="font-bold">經歷</p>
-            <ul className="list-disc list-inside tracking-wide">
+            <ul className="list-disc list-outside pl-4 tracking-wide">
               <li>中華民國牙醫師公會全國聯合會第11屆首席副秘書長</li>
               <li>陽明大學牙醫校友總會副會長</li>
               <li>牙醫門診醫療服務台北區審查分會第10、11、12屆常務委員</li>
