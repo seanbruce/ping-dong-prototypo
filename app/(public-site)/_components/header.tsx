@@ -311,14 +311,14 @@ export default function Header() {
   }, [activeTrigger, value]);
 
   const CustomItemClasses =
-    "rounded-none bg-emerald-500 hover:bg-emerald-600 focus:bg-emerald-600 focus:text-white data-[state=open]:bg-emerald-600 hover:text-white text-white";
+    "rounded-none bg-teal-500 hover:bg-teal-600 focus:bg-teal-600 focus:text-white data-[state=open]:bg-teal-600 hover:text-white text-white";
 
   return (
     <>
-      <header className="h-[60px] bg-emerald-500 flex items-center px-4 min-[1150px]:hidden fixed top-0 inset-x-0 w-full z-30"></header>
+      <header className="h-[60px] bg-teal-500 flex items-center px-4 min-[1150px]:hidden fixed top-0 inset-x-0 w-full z-30"></header>
       <div className="h-[60px] min-[1150px]:hidden" />
       <header className="h-[100px] bg-white hidden min-[1150px]:block"></header>
-      <div className="min-h-[40px] bg-emerald-500 hidden min-[1150px]:block">
+      <div className="min-h-[40px] bg-teal-500 hidden min-[1150px]:block">
         <div className="container mx-auto">
           <NavigationMenu
             className="flex justify-center relative mx-auto"
@@ -390,7 +390,7 @@ export default function Header() {
                   minWidth: activeTrigger?.offsetWidth,
                   transition: "all 0.5s ease",
                 }}
-                className="bg-emerald-500 mt-0 rounded-t-none [&>*]:min-w-full border-0 border-t-2 border-amber-300"
+                className="bg-teal-500 mt-0 rounded-t-none [&>*]:min-w-full border-0 border-t-2 border-amber-300"
               />
             </div>
           </NavigationMenu>
@@ -398,7 +398,7 @@ export default function Header() {
       </div>
       <div
         className={cn(
-          "h-[100dvh] bg-emerald-500 fixed inset-0 z-40 min-[1150px]:hidden min-[1150px]:pointer-events-none transition-all duration-500 origin-top-left transform-gpu",
+          "h-[100dvh] bg-teal-500 fixed inset-0 z-40 min-[1150px]:hidden min-[1150px]:pointer-events-none transition-all duration-500 origin-top-left transform-gpu",
           menuOpen ? "opacity-100" : "opacity-0",
           menuOpen ? "pointer-events-auto" : "pointer-events-none",
           menuOpen ? "skew-x-0" : " -skew-x-6",
@@ -411,7 +411,7 @@ export default function Header() {
           type="scroll"
           ref={scrollAreaRef}
         >
-          <div className="bg-emerald-700 px-5 pt-14 pb-0">
+          <div className="bg-teal-700 px-5 pt-14 pb-0">
             <Button className="mx-auto block mb-4 font-bold" variant="outline">
               登入
             </Button>
@@ -461,7 +461,7 @@ export default function Header() {
                       >
                         {title}
                       </AccordionTrigger>
-                      <AccordionContent className="bg-emerald-600 text-white">
+                      <AccordionContent className="bg-teal-600 text-white">
                         {children.map(({ id, title, url }) => (
                           <Link
                             key={id}
@@ -500,8 +500,8 @@ export default function Header() {
           })
         }
         className={clsx(
-          "fixed left-3 top-2.5 z-50 block min-[1150px]:hidden hover:bg-emerald-600 p-2 rounded-full",
-          menuOpen ? "bg-emerald-700" : "bg-emerald-500"
+          "fixed left-3 top-2.5 z-50 block min-[1150px]:hidden hover:bg-teal-600 p-2 rounded-full",
+          menuOpen ? "bg-teal-700" : "bg-teal-500"
         )}
       >
         <MenuIcon className="text-white" />

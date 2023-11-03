@@ -81,7 +81,7 @@ export default function Carousel() {
             onClick={() => scrollTo(index)}
             className={cn(
               "w-4 h-4 rounded-full",
-              index === selectedIndex ? "bg-emerald-500" : "bg-white"
+              index === selectedIndex ? "bg-teal-500" : "bg-white"
             )}
           />
         ))}

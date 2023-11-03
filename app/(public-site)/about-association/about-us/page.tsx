@@ -4,7 +4,7 @@ import SectionParagraph from "../_components/section-paragraph";
 export default async function Page() {
   return (
     <Card>
-      <CardHeader className="border-b-2 border-emerald-500">
+      <CardHeader className="border-b-2 border-teal-500">
         <CardTitle>活動快訊</CardTitle>
       </CardHeader>
       <CardContent className="py-8">

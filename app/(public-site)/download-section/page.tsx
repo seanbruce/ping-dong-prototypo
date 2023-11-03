@@ -45,15 +45,15 @@ export default async function Page() {
           <Button className="whitespace-nowrap w-full md:w-auto">查詢</Button>
         </div>
         <Table>
-          <TableHeader className="border-b-2 border-emerald-600">
-            <TableRow className="bg-emerald-50 hover:bg-emerald-50">
-              <TableHead className="text-emerald-600 font-bold text-center">
+          <TableHeader className="border-b-2 border-teal-600">
+            <TableRow className="bg-teal-50 hover:bg-teal-50">
+              <TableHead className="text-teal-600 font-bold text-center">
                 類別
               </TableHead>
-              <TableHead className="text-emerald-600 font-bold text-center">
+              <TableHead className="text-teal-600 font-bold text-center">
                 標題
               </TableHead>
-              <TableHead className="text-emerald-600 font-bold text-center w-24">
+              <TableHead className="text-teal-600 font-bold text-center w-24">
                 發佈日期
               </TableHead>
             </TableRow>
@@ -64,7 +64,7 @@ export default async function Page() {
                 key={id}
                 className={cn(
                   index % 2 === 0 && "bg-slate-50",
-                  "hover:bg-emerald-50"
+                  "hover:bg-teal-50"
                 )}
               >
                 <TableCell className="p-2 text-center">{type}</TableCell>

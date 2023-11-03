@@ -1,3 +1,3 @@
 export default function Footer() {
-  return <footer className="flex-auto min-h-[175px] bg-emerald-500"></footer>;
+  return <footer className="flex-auto min-h-[175px] bg-teal-500"></footer>;
 }

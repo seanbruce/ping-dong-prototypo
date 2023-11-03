@@ -29,7 +29,7 @@ export default function RootLayout({
           "gap-4",
           "justify-center",
           "items-center",
-          "bg-emerald-500"
+          "bg-teal-500"
         )}
       >
         <div className="relative rounded-[60px] shadow-xl">
@@ -39,7 +39,7 @@ export default function RootLayout({
             className="relative z-20 pointer-events-none"
           />
           <div className="w-[360px] h-[745px] absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 bg-white z-10 rounded-[56px] overflow-hidden pl-[14px] pr-[13px] pb-[12px]">
-            <div className="h-[49px] bg-emerald-500" />
+            <div className="h-[49px] bg-teal-500" />
             <div className="h-[calc(100%-49px)]">{children}</div>
           </div>
         </div>
@@ -60,7 +60,7 @@ export default function RootLayout({
             className="relative z-20 pointer-events-none"
           />
           <div className="w-[342px] h-[749px] absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 bg-white z-10 rounded-[56px] pl-[12px] pr-[15px] pb-[33px]">
-            <div className="h-[36px] bg-emerald-500" />
+            <div className="h-[36px] bg-teal-500" />
             <div className="h-[calc(100%-36px)]">{children}</div>
           </div>
         </div>

@@ -6,13 +6,13 @@ import SectionParagraph from "../_components/section-paragraph";
 export default async function Page() {
   return (
     <Card>
-      <CardHeader className="border-b-2 border-emerald-500">
+      <CardHeader className="border-b-2 border-teal-500">
         <CardTitle>理事長的話</CardTitle>
       </CardHeader>
       <CardContent className="py-8">
-        <div className="bg-emerald-50 px-2 py-3 lg:px-5 lg:py-6 flex flex-col lg:flex-row border-b border-emerald-600 mb-6">
+        <div className="bg-teal-50 px-2 py-3 lg:px-5 lg:py-6 flex flex-col lg:flex-row border-b border-teal-600 mb-6">
           <div className="flex-auto order-last lg:order-first">
-            <p className="text-emerald-600 font-bold mb-2 text-center lg:text-left">
+            <p className="text-teal-600 font-bold mb-2 text-center lg:text-left">
               台北市牙醫師公會理事長
               <span className="text-xl text-black mx-2">温斯勇</span>醫師
             </p>
@@ -34,7 +34,7 @@ export default async function Page() {
           <div className="w-full max-w-[300px] mx-auto aspect-square lg:w-40 lg:h-40 bg-slate-400 mb-4 lg:mb-0"></div>
         </div>
         <div>
-          <h2 className="text-emerald-600 font-bold border-l-2 border-emerald-600 pl-2 text-lg tracking-wide mb-3">
+          <h2 className="text-teal-600 font-bold border-l-2 border-teal-600 pl-2 text-lg tracking-wide mb-3">
             凡事豈能盡如人意，但求無愧我心
           </h2>
           <SectionParagraph>

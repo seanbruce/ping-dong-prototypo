@@ -28,7 +28,7 @@ export default function RootLayout({
           "gap-4",
           "justify-center",
           "items-center",
-          "bg-emerald-500"
+          "bg-teal-500"
         )}
       >
         <div className="relative rounded-[60px] shadow-xl">

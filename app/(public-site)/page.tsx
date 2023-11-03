@@ -14,12 +14,12 @@ export default function Home() {
           <Carousel />
         </Card>
         <div className="lg:aspect-square flex flex-col gap-5">
-          <Card className="hidden lg:block bg-emerald-500 p-5">
+          <Card className="hidden lg:block bg-teal-500 p-5">
             <p className="text-white text-lg font-bold">全文查詢</p>
             <div className="flex gap-2">
               <Input placeholder="請輸入文字" />
               <Button
-                className="whitespace-nowrap font-bold text-white hover:text-emerald-500"
+                className="whitespace-nowrap font-bold text-white hover:text-teal-500"
                 variant="ghost"
               >
                 查詢

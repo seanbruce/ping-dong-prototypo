@@ -14,7 +14,7 @@ export default async function Layout({
   return (
     <>
       <Card>
-        <CardHeader className="border-b-2 border-emerald-500">
+        <CardHeader className="border-b-2 border-teal-500">
           <CardTitle>各委員會施政理念</CardTitle>
         </CardHeader>
         <CardContent className="py-8">
@@ -24,9 +24,9 @@ export default async function Layout({
               <li key={committee.name}>
                 <Link
                   href={`/about-association/the-governing-philosophies-of-each-committee/committee/${committee.url}`}
-                  className="group flex items-center gap-2 px-2 py-1.5 text-sm transition-colors bg-white hover:bg-emerald-500 hover:text-white"
+                  className="group flex items-center gap-2 px-2 py-1.5 text-sm transition-colors bg-white hover:bg-teal-500 hover:text-white"
                 >
-                  <FaChevronRight className="text-emerald-500 w-3 h-3 group-hover:text-white" />
+                  <FaChevronRight className="text-teal-500 w-3 h-3 group-hover:text-white" />
                   {committee.name}
                 </Link>
               </li>

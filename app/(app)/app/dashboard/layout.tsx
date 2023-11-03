@@ -8,7 +8,7 @@ import SelectVehicleButton from "./_components/select-vehicle-button";
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
     <div className="@container h-full relative flex flex-col">
-      <header className="h-[56px] bg-emerald-500 text-white font-bold grid grid-cols-[56px_1fr_56px] items-center	 py-2 px-1 gap-1">
+      <header className="h-[56px] bg-teal-500 text-white font-bold grid grid-cols-[56px_1fr_56px] items-center	 py-2 px-1 gap-1">
         <div>
           <BackButton />
         </div>

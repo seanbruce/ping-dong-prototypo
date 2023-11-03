@@ -35,7 +35,7 @@ export default function SectionParagraph({
     const normalContent = children.slice(highlightCount);
     return (
       <p className={cn("leading-7 tracking-wide", className)}>
-        <span className="float-left text-emerald-500 font-bold text-3xl lg:text-5xl leading-none mr-1 mt-2.5 lg:mr-2">
+        <span className="float-left text-teal-500 font-bold text-3xl lg:text-5xl leading-none mr-1 mt-2.5 lg:mr-2">
           {highLightContent}
         </span>
         {normalContent}

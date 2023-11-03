@@ -25,7 +25,7 @@ export default function RootLayout({
           "min-h-full",
           "flex",
           "flex-col",
-          "bg-emerald-500"
+          "bg-teal-500"
         )}
       >
         <Header />

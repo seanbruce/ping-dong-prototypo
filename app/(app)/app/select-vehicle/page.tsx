@@ -13,7 +13,7 @@ import {
 export default function Page() {
   return (
     <div className="@container h-full relative flex flex-col">
-      <header className="h-10 bg-emerald-500 text-white font-bold flex justify-center items-center px-4">
+      <header className="h-10 bg-teal-500 text-white font-bold flex justify-center items-center px-4">
         毒化物小量運送
       </header>
       <section className="flex-auto bg-[url('/assets/hollowed-boxes.png')] bg-repeat bg-contain bg-center flex flex-col">

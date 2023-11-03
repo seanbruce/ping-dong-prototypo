@@ -76,18 +76,18 @@ export default async function Page() {
         <Card>
           <CardContent className="p-2">
             <Table>
-              <TableHeader className="border-b-2 border-emerald-600">
-                <TableRow className="bg-emerald-50 hover:bg-emerald-50">
-                  <TableHead className="text-emerald-600 font-bold text-center hidden @md:table-cell">
+              <TableHeader className="border-b-2 border-teal-600">
+                <TableRow className="bg-teal-50 hover:bg-teal-50">
+                  <TableHead className="text-teal-600 font-bold text-center hidden @md:table-cell">
                     聯單編號
                   </TableHead>
-                  <TableHead className="text-emerald-600 font-bold text-center hidden  @md:table-cell">
+                  <TableHead className="text-teal-600 font-bold text-center hidden  @md:table-cell">
                     聯單標題
                   </TableHead>
-                  <TableHead className="text-emerald-600 font-bold text-center w-24 whitespace-nowrap hidden  @md:table-cell">
+                  <TableHead className="text-teal-600 font-bold text-center w-24 whitespace-nowrap hidden  @md:table-cell">
                     發佈日期
                   </TableHead>
-                  <TableHead className="text-emerald-600 font-bold text-center w-24 whitespace-nowrap hidden  @md:table-cell">
+                  <TableHead className="text-teal-600 font-bold text-center w-24 whitespace-nowrap hidden  @md:table-cell">
                     聯單狀態
                   </TableHead>
                 </TableRow>
@@ -101,29 +101,29 @@ export default async function Page() {
                       "@md:table-row",
                       "py-2",
                       index % 2 === 0 && "bg-slate-50",
-                      "hover:bg-emerald-50"
+                      "hover:bg-teal-50"
                     )}
                   >
                     <TableCell
-                      className="p-1 @md:p-2 @md:text-center flex flex-nowrap @md:table-cell before:content-[attr(data-cell)_':'] before:shrink-0 before:w-[60px] before:font-bold before:mr-2 before:text-emerald-600 before:whitespace-nowrap @md:before:hidden"
+                      className="p-1 @md:p-2 @md:text-center flex flex-nowrap @md:table-cell before:content-[attr(data-cell)_':'] before:shrink-0 before:w-[60px] before:font-bold before:mr-2 before:text-teal-600 before:whitespace-nowrap @md:before:hidden"
                       data-cell="聯單編號"
                     >
                       {no}
                     </TableCell>
                     <TableCell
-                      className="p-1 @md:p-2 @md:border-l font-bold flex flex-nowrap @md:table-cell before:content-[attr(data-cell)_':'] before:shrink-0 before:w-[60px] before:font-bold before:mr-2 before:text-emerald-600 before:whitespace-nowrap @md:before:hidden"
+                      className="p-1 @md:p-2 @md:border-l font-bold flex flex-nowrap @md:table-cell before:content-[attr(data-cell)_':'] before:shrink-0 before:w-[60px] before:font-bold before:mr-2 before:text-teal-600 before:whitespace-nowrap @md:before:hidden"
                       data-cell="聯單標題"
                     >
                       <Link href={`/news-and-notices/${id}`}>{title}</Link>
                     </TableCell>
                     <TableCell
-                      className="p-1 @md:p-2 @md:text-center @md:border-l flex flex-nowrap @md:table-cell before:content-[attr(data-cell)_':'] before:shrink-0 before:w-[60px] before:font-bold before:mr-2 before:text-emerald-600 before:whitespace-nowrap @md:before:hidden"
+                      className="p-1 @md:p-2 @md:text-center @md:border-l flex flex-nowrap @md:table-cell before:content-[attr(data-cell)_':'] before:shrink-0 before:w-[60px] before:font-bold before:mr-2 before:text-teal-600 before:whitespace-nowrap @md:before:hidden"
                       data-cell="發佈日期"
                     >
                       {publishDateTime}
                     </TableCell>
                     <TableCell
-                      className="p-1 @md:p-2 @md:text-center @md:border-l flex flex-nowrap @md:table-cell before:content-[attr(data-cell)_':'] before:shrink-0 before:w-[60px] before:font-bold before:mr-2 before:text-emerald-600 before:whitespace-nowrap @md:before:hidden"
+                      className="p-1 @md:p-2 @md:text-center @md:border-l flex flex-nowrap @md:table-cell before:content-[attr(data-cell)_':'] before:shrink-0 before:w-[60px] before:font-bold before:mr-2 before:text-teal-600 before:whitespace-nowrap @md:before:hidden"
                       data-cell="聯單狀態"
                     >
                       {type}

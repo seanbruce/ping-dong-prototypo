@@ -18,8 +18,8 @@ export default function StyledLink({
   return (
     <li
       className={cn(
-        " text-white text-sm flex justify-between items-center font-bold transition-colors hover:bg-emerald-700 focus:bg-emerald-700 focus:ring-1 focus:ring-orange-400 focus:outline-none ",
-        pathname === href ? "bg-emerald-700" : "bg-emerald-500",
+        " text-white text-sm flex justify-between items-center font-bold transition-colors hover:bg-teal-700 focus:bg-teal-700 focus:ring-1 focus:ring-orange-400 focus:outline-none ",
+        pathname === href ? "bg-teal-700" : "bg-teal-500",
         className
       )}
     >

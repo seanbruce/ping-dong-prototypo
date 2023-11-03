@@ -7,19 +7,19 @@ export default async function Page(props: {
 }) {
   return (
     <div id="content">
-      <div className="bg-emerald-50 px-2 py-3 lg:px-5 lg:py-6 flex flex-col lg:flex-row border-b border-emerald-600 mb-6">
+      <div className="bg-teal-50 px-2 py-3 lg:px-5 lg:py-6 flex flex-col lg:flex-row border-b border-teal-600 mb-6">
         <div className="flex-auto order-last lg:order-first">
-          <p className="text-emerald-600 font-bold mb-2 text-lg  text-center lg:text-left">
+          <p className="text-teal-600 font-bold mb-2 text-lg  text-center lg:text-left">
             監事會
           </p>
           <p className="text-sm font-bold grid grid-cols-[100px_1fr]">
-            <span className="text-emerald-600">監事召集人</span>
+            <span className="text-teal-600">監事召集人</span>
             <span>許仕聰</span>
 
-            <span className="text-emerald-600">常務監事</span>
+            <span className="text-teal-600">常務監事</span>
             <span>王俊勝、李建雄</span>
 
-            <span className="text-emerald-600">監事</span>
+            <span className="text-teal-600">監事</span>
             <span>王哲訓、林春長、孫奕貞、許榮庭、黃舜德、鄭翔宇</span>
           </p>
         </div>

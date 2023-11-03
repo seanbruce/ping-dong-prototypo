@@ -195,24 +195,24 @@ const afterToTheReorganization = [
 export default async function Page() {
   return (
     <Card>
-      <CardHeader className="border-b-2 border-emerald-500">
+      <CardHeader className="border-b-2 border-teal-500">
         <CardTitle>歷屆理事長</CardTitle>
       </CardHeader>
       <CardContent className="py-8">
-        <h2 className="text-emerald-600 font-bold border-l-2 border-emerald-600 pl-2 text-lg tracking-wide mb-3">
+        <h2 className="text-teal-600 font-bold border-l-2 border-teal-600 pl-2 text-lg tracking-wide mb-3">
           改制前
         </h2>
         <Table>
           <TableCaption>改制前理事長列表</TableCaption>
-          <TableHeader className="border-b-2 border-emerald-600">
-            <TableRow className="bg-emerald-50 hover:bg-emerald-50">
-              <TableHead className="text-emerald-600 font-bold text-center">
+          <TableHeader className="border-b-2 border-teal-600">
+            <TableRow className="bg-teal-50 hover:bg-teal-50">
+              <TableHead className="text-teal-600 font-bold text-center">
                 屆次
               </TableHead>
-              <TableHead className="text-emerald-600 font-bold text-center">
+              <TableHead className="text-teal-600 font-bold text-center">
                 年度(民國)
               </TableHead>
-              <TableHead className="text-emerald-600 font-bold text-center">
+              <TableHead className="text-teal-600 font-bold text-center">
                 姓名
               </TableHead>
             </TableRow>
@@ -223,7 +223,7 @@ export default async function Page() {
                 key={term.term}
                 className={cn(
                   index % 2 === 0 && "bg-slate-50",
-                  "hover:bg-emerald-50"
+                  "hover:bg-teal-50"
                 )}
               >
                 <TableCell className="p-2 text-center">{term.term}</TableCell>
@@ -237,23 +237,23 @@ export default async function Page() {
             ))}
           </TableBody>
         </Table>
-        <h2 className="text-emerald-600 font-bold border-l-2 border-emerald-600 pl-2 text-lg tracking-wide mb-3">
+        <h2 className="text-teal-600 font-bold border-l-2 border-teal-600 pl-2 text-lg tracking-wide mb-3">
           改制后
         </h2>
         <Table>
           <TableCaption>改制后理事長列表</TableCaption>
-          <TableHeader className="border-b-2 border-emerald-600">
-            <TableRow className="bg-emerald-50 hover:bg-emerald-50">
-              <TableHead className="text-emerald-600 font-bold text-center">
+          <TableHeader className="border-b-2 border-teal-600">
+            <TableRow className="bg-teal-50 hover:bg-teal-50">
+              <TableHead className="text-teal-600 font-bold text-center">
                 屆次
               </TableHead>
-              <TableHead className="text-emerald-600 font-bold text-center">
+              <TableHead className="text-teal-600 font-bold text-center">
                 年度(民國)
               </TableHead>
-              <TableHead className="text-emerald-600 font-bold text-center">
+              <TableHead className="text-teal-600 font-bold text-center">
                 姓名
               </TableHead>
-              <TableHead className="text-emerald-600 font-bold text-center">
+              <TableHead className="text-teal-600 font-bold text-center">
                 校別
               </TableHead>
             </TableRow>
@@ -265,7 +265,7 @@ export default async function Page() {
                   key={term.term}
                   className={cn(
                     index % 2 === 0 && "bg-slate-50",
-                    "hover:bg-emerald-50"
+                    "hover:bg-teal-50"
                   )}
                 >
                   <TableCell className="p-2 text-center">{term.term}</TableCell>
