@@ -3,6 +3,7 @@ import Link from "next/link";
 import LayoutTitle from "./_components/layout-title";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import BackButton from "./_components/back-button";
+import SelectVehicleButton from "./_components/select-vehicle-button";
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
@@ -12,7 +13,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           <BackButton />
         </div>
         <LayoutTitle />
-        <div />
+        <SelectVehicleButton />
       </header>
       <ScrollArea className="h-[calc(100%-56px-60px)] bg-gray-100">
         {children}

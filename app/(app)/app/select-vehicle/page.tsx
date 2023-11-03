@@ -1,8 +1,14 @@
 import Image from "next/image";
 import Link from "next/link";
 import logo from "@/public/assets/logo.png";
-import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 
 export default function Page() {
   return (
@@ -14,12 +20,24 @@ export default function Page() {
         <Image src={logo} alt="logo" className="max-w-[80%] mx-auto mt-4" />
 
         <div className="bg-white/50 py-8 px-4 flex flex-col w-11/12 @sm:w-9/12 mx-auto mt-8 rounded">
-          <h1 className="mb-4 font-bold text-center">登入</h1>
-          <Input placeholder="賬號" className="mb-8" />
-          <Input placeholder="密碼" type="password" className="mb-8" />
+          <h1 className="mb-4 font-bold text-center">選擇車輛</h1>
+          <Select>
+            <SelectTrigger className="w-full mb-8">
+              <SelectValue placeholder="選擇車輛" />
+            </SelectTrigger>
+            <SelectContent>
+              <SelectItem value="KEA-0001">
+                KEA-0001【CMC Veryca A190】
+              </SelectItem>
+              <SelectItem value="KEA-0002">KEA-0002【DFSK KingCab】</SelectItem>
+              <SelectItem value="KEA-0003">
+                KEA-0003【Mitsubishi Delica】
+              </SelectItem>
+            </SelectContent>
+          </Select>
           <Button className="w-full @sm:w-max mx-auto">
-            <Link href="/app/select-vehicle" className="w-full">
-              登入
+            <Link href="/app/dashboard" className="w-full">
+              確認
             </Link>
           </Button>
         </div>

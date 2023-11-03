@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import maleAvatar from "@/public/assets/anonymous_avatars_grey_circles_male.jpg";
-import { LogOut } from "lucide-react";
+import { LogOut, Truck } from "lucide-react";
 import { Separator } from "@/components/ui/separator";
 
 export default function Page() {
@@ -20,6 +20,13 @@ export default function Page() {
         </div>
       </div>
       <div className="w-full">
+        <Link
+          href="/app/dashboard/settings/vehicle-setting"
+          className="w-full flex items-center bg-white px-4 py-2 gap-2 border-b"
+        >
+          <Truck className="w-4 h-4" />
+          <span className="font-bold text-gray-700">車輛管理</span>
+        </Link>
         <Link
           href="/app"
           className="w-full flex items-center bg-white px-4 py-2 gap-2"
