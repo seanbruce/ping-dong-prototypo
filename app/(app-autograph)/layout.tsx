@@ -5,6 +5,7 @@ import "../globals.css";
 import Image from "next/image";
 import iphone15Frame from "@/public/assets/apple-iphone-15-2023-medium.png";
 import ipadAirFrame from "@/public/assets/apple-ipad-air-4-medium.png";
+import samsungFrame from "@/public/assets/samsung-galaxy-a12-2021-medium.png";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -49,6 +50,16 @@ export default function RootLayout({
             className="relative z-20 pointer-events-none"
           />
           <div className="w-[536px] h-[745px] absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 bg-white z-10 rounded-[56px] pl-[29px] pt-[31px] pr-[30px] pb-[29px]">
+            {children}
+          </div>
+        </div>
+        <div className="relative rounded-[40px] shadow-xl">
+          <Image
+            src={samsungFrame}
+            alt="iphone air frame"
+            className="relative z-20 pointer-events-none"
+          />
+          <div className="w-[342px] h-[749px] absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 bg-white z-10 rounded-[56px] pl-[12px] pr-[15px] pb-[33px]">
             {children}
           </div>
         </div>

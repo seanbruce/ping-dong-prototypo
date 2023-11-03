@@ -7,6 +7,8 @@ import iphone15Frame from "@/public/assets/apple-iphone-15-2023-medium.png";
 import ipadAirFrame from "@/public/assets/apple-ipad-air-4-medium.png";
 import samsungFrame from "@/public/assets/samsung-galaxy-a12-2021-medium.png";
 import { GrHomeOption, GrMenu } from "react-icons/gr";
+import { BiSignal4, BiWifi2 } from "react-icons/bi";
+import { BsBatteryFull } from "react-icons/bs";
 import BackButton from "./_components/back-button";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -41,7 +43,16 @@ export default function RootLayout({
             className="relative z-20 pointer-events-none"
           />
           <div className="w-[360px] h-[745px] absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 bg-white z-10 rounded-[56px] overflow-hidden pl-[14px] pr-[13px] pb-[12px]">
-            <div className="h-[49px] bg-teal-500" />
+            <div className="h-[49px] bg-teal-500 flex flex-col">
+              <div className="mt-auto px-5 pb-1 text-white font-bold flex items-center">
+                <span>9:40</span>
+                <div className="ml-auto flex items-center">
+                  <BiSignal4 className="w-5 h-5" />
+                  <BiWifi2 className="w-5 h-5" />
+                  <BsBatteryFull className="w-5 h-5 relative top-0.5 ml-1" />
+                </div>
+              </div>
+            </div>
             <div className="h-[calc(100%-49px)]">{children}</div>
           </div>
         </div>
@@ -52,7 +63,17 @@ export default function RootLayout({
             className="relative z-20 pointer-events-none"
           />
           <div className="w-[536px] h-[745px] absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 bg-white z-10 rounded-[56px] pl-[29px] pt-[31px] pr-[30px] pb-[29px]">
-            {children}
+            <div className="bg-teal-500 flex flex-col">
+              <div className="mt-auto px-5 pb-1 text-white font-bold flex items-center">
+                <span className="text-sm">9:40</span>
+                <div className="ml-auto flex items-center">
+                  <BiSignal4 className="w-5 h-5" />
+                  <BiWifi2 className="w-5 h-5" />
+                  <BsBatteryFull className="w-5 h-5 relative top-0.5 ml-1" />
+                </div>
+              </div>
+            </div>
+            <div className="h-[calc(100%-28px)]">{children}</div>
           </div>
         </div>
         <div className="relative rounded-[40px] shadow-xl">
