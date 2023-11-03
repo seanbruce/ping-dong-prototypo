@@ -6,6 +6,8 @@ import Image from "next/image";
 import iphone15Frame from "@/public/assets/apple-iphone-15-2023-medium.png";
 import ipadAirFrame from "@/public/assets/apple-ipad-air-4-medium.png";
 import samsungFrame from "@/public/assets/samsung-galaxy-a12-2021-medium.png";
+import { GrHomeOption, GrMenu } from "react-icons/gr";
+import BackButton from "./_components/back-button";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -61,7 +63,12 @@ export default function RootLayout({
           />
           <div className="w-[342px] h-[749px] absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 bg-white z-10 rounded-[56px] pl-[12px] pr-[15px] pb-[33px]">
             <div className="h-[36px] bg-teal-500" />
-            <div className="h-[calc(100%-36px)]">{children}</div>
+            <div className="h-[calc(100%-36px-40px)] relative">{children}</div>
+            <div className="flex items-center h-10 w-full justify-evenly">
+              <GrMenu className="rotate-90" />
+              <GrHomeOption />
+              <BackButton />
+            </div>
           </div>
         </div>
       </body>
