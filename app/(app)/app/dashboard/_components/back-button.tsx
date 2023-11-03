@@ -1,18 +1,27 @@
 "use client";
 import { Button } from "@/components/ui/button";
 import { ChevronLeft } from "lucide-react";
-import { useSelectedLayoutSegment } from "next/navigation";
+import { useSelectedLayoutSegments } from "next/navigation";
 import { useRouter } from "next/navigation";
 
 export default function BackButton() {
-  const segment = useSelectedLayoutSegment();
+  const [segment1, segment2] = useSelectedLayoutSegments();
   const router = useRouter();
-  console.log({ segment });
   let show;
-  switch (segment) {
+  switch (segment1) {
     case "detail":
       show = true;
       break;
+    case "settings": {
+      switch (segment2) {
+        case "vehicle-setting":
+          show = true;
+          break;
+        default:
+          show = false;
+      }
+      break;
+    }
     default:
       show = false;
   }

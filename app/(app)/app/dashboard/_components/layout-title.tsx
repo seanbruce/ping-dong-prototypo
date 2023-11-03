@@ -1,17 +1,23 @@
 "use client";
-import { useSelectedLayoutSegment } from "next/navigation";
+import { useSelectedLayoutSegments } from "next/navigation";
 
 export default function LayoutTitle() {
-  const segment = useSelectedLayoutSegment();
-  console.log({ segment });
+  const [segment1, segment2] = useSelectedLayoutSegments();
   let title = "";
-  switch (segment) {
-    case null:
+  switch (segment1) {
+    case undefined:
       title = "首頁";
       break;
-    case "settings":
-      title = "設置";
+    case "settings": {
+      switch (segment2) {
+        case "vehicle-setting":
+          title = "車輛管理";
+          break;
+        default:
+          title = "設置";
+      }
       break;
+    }
     case "detail":
       title = "資訊填寫";
       break;
