@@ -28,7 +28,7 @@
     "date-fns": "^2.30.0",
     "embla-carousel-autoplay": "8.0.0-rc14",
     "embla-carousel-react": "8.0.0-rc14",
-    "lucide-react": "^0.290.0",
+    "lucide-react": "^0.291.0",
     "next": "14.0.1",
     "react": "^18.2.0",
     "react-aria": "^3.29.1",
@@ -40,8 +40,8 @@
     "tailwindcss-animate": "^1.0.7"
   },
   "devDependencies": {
-    "@types/node": "^20.8.9",
-    "@types/react": "^18.2.33",
+    "@types/node": "^20.8.10",
+    "@types/react": "^18.2.34",
     "@types/react-dom": "^18.2.14",
     "autoprefixer": "^10.4.16",
     "eslint": "^8.52.0",

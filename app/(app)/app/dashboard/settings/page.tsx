@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import maleAvatar from "@/public/assets/anonymous_avatars_grey_circles_male.jpg";
 import { LogOut } from "lucide-react";
+import { Separator } from "@/components/ui/separator";
 
 export default function Page() {
   return (
@@ -12,7 +13,9 @@ export default function Page() {
         </div>
         <div className="flex justify-center items-center text-gray-500 gap-4">
           <p>xxxxxxx</p>
+          <Separator orientation="vertical" className="h-4" />
           <p>xxxxxxx</p>
+          <Separator orientation="vertical" className="h-4" />
           <p>xxxxxxx</p>
         </div>
       </div>

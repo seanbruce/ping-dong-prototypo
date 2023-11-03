@@ -10,8 +10,7 @@ export default function BackButton() {
   console.log({ segment });
   let show;
   switch (segment) {
-    case "consignment-note":
-    case "consignment-note-list":
+    case "detail":
       show = true;
       break;
     default:

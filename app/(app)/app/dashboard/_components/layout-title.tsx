@@ -12,11 +12,8 @@ export default function LayoutTitle() {
     case "settings":
       title = "設置";
       break;
-    case "consignment-note":
-      title = "聯單";
-      break;
-    case "consignment-note-list":
-      title = "聯單清單";
+    case "detail":
+      title = "資訊填寫";
       break;
     default:
       title = "未知標題";
