@@ -73,7 +73,7 @@ export default function RootLayout({
                 </div>
               </div>
             </div>
-            <div className="h-[calc(100%-28px)]">{children}</div>
+            <div className="h-[calc(100%-24px)]">{children}</div>
           </div>
         </div>
         <div className="relative rounded-[40px] shadow-xl">
